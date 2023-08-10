@@ -1,0 +1,149 @@
+body {
+  font-family: "Cardo", serif;
+  color: rgb(57, 62, 65);
+  background-color: rgb(241, 242, 235);
+}
+.inactive {
+  display: none !important;
+}
+select,
+button,
+option {
+  font-family: "Cardo", serif;
+  color: rgb(57, 62, 65);
+  font-weight: 700;
+}
+select {
+  min-width: 48vw;
+  padding: 1% 0;
+  margin-top: 4vh;
+  font-size: 3.5vw;
+  text-align: center;
+  border-top-right-radius: 3% 50%;
+  border-top-left-radius: 3% 50%;
+  border-bottom-left-radius: 3% 50%;
+  border-bottom-right-radius: 3% 50%;
+  border-width: 0.6vw;
+  font-family: "Cardo", serif;
+  color: rgb(57, 62, 65);
+  border-color: rgb(164, 194, 165);
+  background-color: rgb(241, 242, 235);
+}
+h1 {
+  font-size: 4vw;
+  margin: 0 !important;
+}
+h2 {
+  margin: 0 !important;
+}
+button {
+  color: rgb(241, 242, 235);
+  background-color: rgb(164, 194, 165);
+  border: none;
+  border-radius: 30px;
+}
+.homepage,
+.loading-page,
+.city-page,
+.welcome-home-page {
+  min-width: 95vw;
+  min-height: 95vh;
+  text-align: center;
+}
+
+.homepage-content {
+  max-width: 80vw;
+  margin: 60px auto;
+}
+.homepage-content h1 {
+  text-size-adjust: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.homepage-content h2 {
+  font-weight: 400;
+  font-size: 2.5vw;
+}
+.homepage-content button {
+  min-width: 20vw;
+  padding: 1% 0;
+  font-size: 1.5vw;
+  margin-top: 4vh;
+}
+
+footer {
+  text-align: right;
+}
+
+.loading-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loading-page p {
+  margin: 0 !important;
+  font-size: 2vw;
+}
+.loading-image {
+  max-width: 50vw;
+}
+
+.city-content {
+  display: flex;
+}
+.city-page h2 {
+  font-size: 2vw;
+}
+.city-page img,
+.welcome-home-page img {
+  max-width: 40vw;
+  max-height: 80vh;
+}
+.city-text {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 6vh;
+}
+.city-page button,
+.welcome-home-page button {
+  min-width: 20vw;
+  padding: 0.3% 2.5%;
+  font-size: 3vw;
+  margin: 0;
+}
+.city-page p {
+  font-weight: 700;
+  font-size: 3vw;
+}
+.time-display {
+  font-size: 8vw;
+}
+
+.welcome-home-content {
+  display: flex;
+}
+.welcome-home-page .current {
+  display: flex;
+  height: 47vh;
+  font-size: 2vw;
+  font-weight: 700;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.welcome-home-text {
+  width: 60vw;
+  padding-top: 6vh;
+}
+.welcome-home-page h2 {
+  font-size: 3vw;
+}
+.current-timezone {
+  font-size: 3vw;
+  overflow-wrap: anywhere;
+}
+.current-time {
+  font-size: 5vw;
+}
