@@ -4,15 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.9.2/css/flag-icons.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World-Clock Project</title>
   </head>
   <body>
-    <a href="https://github.com/mikaelagillett/world-clock-project"
-      >open-source coded</a
-    >
-    by mikaela gillett
+    <div class="container">
+      <div class="homepage">
+        <h1>Welcome to Clock Airlines</h1>
+        <h2>please purchase a ticket</h2>
+        <form action="/submit" class="ticket-form" id="ticket-form">
+          <select name="travel-location" id="location-select">
+            <option value="">select a travel location</option>
+            <option value="paris">Paris</option>
+            <option value="toronto">Toronto</option>
+            <option value="london">London</option>
+            <option value="new-york">New York</option>
+          </select>
+          <select name="travel-date" id="date-select">
+            <option value="">select travel date</option>
+            <option value="today">Today</option>
+            <option value="next-week">Next Week</option>
+            <option value="next-year">Next Year</option>
+            <option value="ten-years">10 Years</option>
+          </select>
+          <button type="submit">Purchase Ticket</button>
+        </form>
+        <footer>
+          <a href="https://github.com/mikaelagillett/world-clock-project"
+            >open-source coded</a
+          >
+          by mikaela gillett
+        </footer>
+      </div>
+      <div class="loading-page">
+        <img src="images/plane1.png" alt="plane" />
+        <p class="loading-text">boarding plane...</p>
+      </div>
+      <div class="city-page">
+        <h1>Welcome to Paris <span class="fi fi-fr"></span></h1>
+        <h2>arrival date: August 10th, 2023</h2>
+        <div class="time-section">
+          it is currently:
+          <span class="time-display">12:02:57</span>
+        </div>
+        <img src="images/paris-icon.png" alt="eiffel tower sketch" />
+        <button class="travel-home-button">travel home</button>
+      </div>
+      <div class="welcome-home-page">
+        <h1>Welcome Home</h1>
+        <h2>thank you for flying with us</h2>
+        <div class="current-location-section">
+          arrival location:
+          <span class="current-timezone">America/Toronto</span>
+        </div>
+        <div class="current-time-section">
+          it is currently:
+          <span class="current-time">12:02:57</span>
+        </div>
+        <img src="images/home.png" alt="home sketch" />
+        <button class="new-flight-button">new flight</button>
+      </div>
+    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
