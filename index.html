@@ -23,30 +23,57 @@
       <div class="homepage">
         <div class="homepage-content">
           <h1>Welcome to Clock Airlines</h1>
-          <h2>please purchase a ticket</h2>
-          <form action="/submit" class="ticket-form" id="ticket-form">
-            <select name="travel-location" id="location-select">
-              <option value="" selected disabled hidden>
-                select a travel location
-              </option>
-              <option value="paris">Paris</option>
-              <option value="toronto">Toronto</option>
-              <option value="london">London</option>
-              <option value="new-york">New York</option>
-            </select>
-            <br />
-            <select name="travel-date" id="date-select">
-              <option value="" selected disabled hidden>
-                select travel date
-              </option>
-              <option value="today">Today</option>
-              <option value="next-week">Next Week</option>
-              <option value="next-year">Next Year</option>
-              <option value="ten-years">10 Years</option>
-            </select>
-            <br />
-            <button type="submit">Purchase Ticket</button>
-          </form>
+          <div class="main-home">
+            <div class="home-time-displays">
+              <div class="home-paris">
+                <h2>Paris</h2>
+                <h3 id="paris-date"></h3>
+                <span id="paris-time"></span>
+              </div>
+              <div class="home-toronto">
+                <h2>Toronto</h2>
+                <h3 id="toronto-date"></h3>
+                <span id="toronto-time"></span>
+              </div>
+              <div class="home-london">
+                <h2>London</h2>
+                <h3 id="london-date"></h3>
+                <span id="london-time"></span>
+              </div>
+              <div class="home-new-york">
+                <h2>New York</h2>
+                <h3 id="new-york-date"></h3>
+                <span id="new-york-time"></span>
+              </div>
+            </div>
+            <button type="submit">Book a Flight</button>
+          </div>
+          <div class="purchase-a-ticket inactive">
+            <h2>please purchase a ticket</h2>
+            <form action="/submit" class="ticket-form" id="ticket-form">
+              <select name="travel-location" id="location-select">
+                <option value="" selected disabled hidden>
+                  select a travel location
+                </option>
+                <option value="paris">Paris</option>
+                <option value="toronto">Toronto</option>
+                <option value="london">London</option>
+                <option value="new-york">New York</option>
+              </select>
+              <br />
+              <select name="travel-date" id="date-select">
+                <option value="" selected disabled hidden>
+                  select travel date
+                </option>
+                <option value="today">Today</option>
+                <option value="next-week">Next Week</option>
+                <option value="next-year">Next Year</option>
+                <option value="ten-years">10 Years</option>
+              </select>
+              <br />
+              <button type="submit">Purchase Ticket</button>
+            </form>
+          </div>
         </div>
         <footer>
           <a href="https://github.com/mikaelagillett/world-clock-project"
