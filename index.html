@@ -52,7 +52,7 @@
           </div>
           <div class="purchase-a-ticket inactive" id="home-purchase">
             <h2>please purchase a ticket</h2>
-            <form action="" class="ticket-form" id="ticket-form">
+            <form action="/submit" class="ticket-form" id="ticket-form">
               <select name="travel-location" id="location-select">
                 <option value="" selected disabled hidden>
                   select a travel location
@@ -67,10 +67,10 @@
                 <option value="" selected disabled hidden>
                   select travel date
                 </option>
-                <option value="0">Today</option>
-                <option value="1, 'w'">Next Week</option>
-                <option value="1, 'y'">Next Year</option>
-                <option value="10, 'y'">10 Years</option>
+                <option value="today">Today</option>
+                <option value="next-week">Next Week</option>
+                <option value="next-year">Next Year</option>
+                <option value="ten-years">10 Years</option>
               </select>
               <br />
               <button type="submit" id="purchase-button" accesskey="p">
@@ -111,12 +111,14 @@
               <div class="current-location-section">
                 arrival location:
                 <br />
-                <span class="current-timezone">America/Toronto</span>
+                <span class="current-timezone" id="current-timezone"
+                  >America/Toronto</span
+                >
               </div>
               <div class="current-time-section">
                 it is currently:
                 <br />
-                <span class="current-time">12:02:57</span>
+                <span class="current-time" id="current-time">12:02:57</span>
               </div>
             </div>
           </div>

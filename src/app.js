@@ -37,11 +37,13 @@ function changeActivePage(event) {
 }
 function getTicket(selection) {
   selection.preventDefault();
-
+  console.log(selection);
   homepage.classList.add("inactive");
   loadingPage.classList.remove("inactive");
   loading();
-  setTimeout(displayCity, 6000);
+  setTimeout(function () {
+    displayCity();
+  }, 6000);
 }
 function loading() {
   planeInterval = setInterval(loadPlane, 1000);
@@ -83,19 +85,33 @@ function displayCity() {
   cityPage.classList.remove("inactive");
   activeButton = document.querySelector("#home-button");
   activeButton.addEventListener("click", changeActivePage);
+
+  if (selectedDate === "today") {
+    selectedTime = moment();
+  } else if (selectedDate === "next-week") {
+    selectedTime = moment().add(1, "w");
+  } else if (selectedDate === "next-year") {
+    selectedTime = moment().add(1, "y");
+  } else if (selectedDate === "ten-years") {
+    selectedTime = moment().add(10, "y");
+  }
   cityContent.innerHTML = `
           <div class="city-text">
             <header>
-              <h1>Welcome to <span class="city">Paris<span> <span class="fi fi-fr"></span></h1>
-              <h2>arrival date: August 10th, 2023</h2>
+              <h1>Welcome to <span>${selectedLocation} <span> <span class="fi fi-fr"></span></h1>
+              <h2>arrival date: ${selectedTime
+                .tz(selectedTimezone)
+                .format("MMMM Do, YYYY")}</h2>
             </header>
             <p>
               it is currently:
               <br />
-              <span class="time-display">12:02:57</span>
+              <span class="time-display">${selectedTime
+                .tz(selectedTimezone)
+                .format("HH:mm:ss")}</span>
             </p>
           </div>
-          <img src="images/paris-icon.png" alt="city sketch" />
+          <img src="images/${selectedImage}-icon.png" alt="city sketch" />
         `;
 }
 function displayHome() {
@@ -103,8 +119,32 @@ function displayHome() {
   clearInterval(descriptionInterval);
   loadingPage.classList.add("inactive");
   welcomeHomePage.classList.remove("inactive");
+  let homeTime = document.querySelector("#current-time");
+  let homeTimezone = document.querySelector("#current-timezone");
+  homeTimezone.innerHTML = moment.tz.guess();
+  setInterval(function () {
+    homeTime.innerHTML = moment().tz(moment.tz.guess()).format("HH:mm:ss");
+  }, 1000);
 }
+function changeLocation(data) {
+  selectedTimezone = data.target.value;
+  selectedLocation = locationSelect.options[locationSelect.selectedIndex].text;
+  selectedImage =
+    locationSelect.options[locationSelect.selectedIndex].text.toLowerCase();
+  if (selectedImage === "new york") {
+    selectedImage = "new-york";
+  }
+}
+function changeDate(data) {
+  selectedDate = data.target.value;
+}
+
 timeInterval = setInterval(displayTimesHome, 1000);
+let selectedTimezone = "";
+let selectedLocation = "";
+let selectedImage = "";
+let selectedDate = "";
+let selectedTime = "";
 let homepage = document.querySelector("#home");
 let homeTimes = document.querySelector("#home-times");
 let homeTicketPurchase = document.querySelector("#home-purchase");
@@ -116,3 +156,7 @@ let activeButton = document.querySelector("#book-button");
 activeButton.addEventListener("click", changeActivePage);
 let ticketPurchase = document.querySelector("#ticket-form");
 ticketPurchase.addEventListener("submit", getTicket);
+let locationSelect = document.querySelector("#location-select");
+let dateSelect = document.querySelector("#date-select");
+locationSelect.addEventListener("change", changeLocation);
+dateSelect.addEventListener("change", changeDate);
