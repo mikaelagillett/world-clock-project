@@ -20,10 +20,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="homepage">
+      <div class="homepage" id="home">
         <div class="homepage-content">
           <h1>Welcome to Clock Airlines</h1>
-          <div class="main-home">
+          <div class="main-home" id="home-times">
             <div class="home-time-displays">
               <div class="home-paris">
                 <h2>Paris</h2>
@@ -46,32 +46,36 @@
                 <span id="new-york-time"></span>
               </div>
             </div>
-            <button type="submit">Book a Flight</button>
+            <button type="submit" id="book-button" accesskey="b">
+              Book a Flight
+            </button>
           </div>
-          <div class="purchase-a-ticket inactive">
+          <div class="purchase-a-ticket inactive" id="home-purchase">
             <h2>please purchase a ticket</h2>
-            <form action="/submit" class="ticket-form" id="ticket-form">
+            <form action="" class="ticket-form" id="ticket-form">
               <select name="travel-location" id="location-select">
                 <option value="" selected disabled hidden>
                   select a travel location
                 </option>
-                <option value="paris">Paris</option>
-                <option value="toronto">Toronto</option>
-                <option value="london">London</option>
-                <option value="new-york">New York</option>
+                <option value="Europe/Paris">Paris</option>
+                <option value="America/Toronto">Toronto</option>
+                <option value="Europe/London">London</option>
+                <option value="America/New_York">New York</option>
               </select>
               <br />
               <select name="travel-date" id="date-select">
                 <option value="" selected disabled hidden>
                   select travel date
                 </option>
-                <option value="today">Today</option>
-                <option value="next-week">Next Week</option>
-                <option value="next-year">Next Year</option>
-                <option value="ten-years">10 Years</option>
+                <option value="0">Today</option>
+                <option value="1, 'w'">Next Week</option>
+                <option value="1, 'y'">Next Year</option>
+                <option value="10, 'y'">10 Years</option>
               </select>
               <br />
-              <button type="submit">Purchase Ticket</button>
+              <button type="submit" id="purchase-button" accesskey="p">
+                Purchase Ticket
+              </button>
             </form>
           </div>
         </div>
@@ -82,28 +86,22 @@
           by mikaela gillett
         </footer>
       </div>
-      <div class="loading-page inactive">
-        <img src="images/plane1.png" alt="plane" class="loading-image" />
-        <p>boarding plane...</p>
+      <div class="loading-page inactive" id="loading-page">
+        <img
+          src="images/plane1.png"
+          alt="plane"
+          class="loading-image"
+          id="loading-image"
+        />
+        <p id="loading-description">boarding plane ...</p>
       </div>
-      <div class="city-page inactive">
-        <div class="city-content">
-          <div class="city-text">
-            <header>
-              <h1>Welcome to Paris <span class="fi fi-fr"></span></h1>
-              <h2>arrival date: August 10th, 2023</h2>
-            </header>
-            <p>
-              it is currently:
-              <br />
-              <span class="time-display">12:02:57</span>
-            </p>
-          </div>
-          <img src="images/paris-icon.png" alt="eiffel tower sketch" />
-        </div>
-        <button class="travel-home-button">travel home</button>
+      <div class="city-page inactive" id="city-page">
+        <div class="city-content" id="city-content"></div>
+        <button type="submit" id="home-button" accesskey="h">
+          travel home
+        </button>
       </div>
-      <div class="welcome-home-page inactive">
+      <div class="welcome-home-page inactive" id="welcome-home-page">
         <div class="welcome-home-content">
           <div class="welcome-home-text">
             <h1>Welcome Home</h1>
@@ -124,7 +122,9 @@
           </div>
           <img src="images/home.png" alt="home sketch" />
         </div>
-        <button class="new-flight-button">new flight</button>
+        <button type="submit" id="new-flight-button" accesskey="n">
+          new flight
+        </button>
       </div>
     </div>
     <script src="src/app.js"></script>

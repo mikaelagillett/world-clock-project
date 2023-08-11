@@ -43,6 +43,9 @@ button {
   border: none;
   border-radius: 30px;
 }
+button:hover {
+  cursor: pointer;
+}
 .homepage,
 .loading-page,
 .city-page,
@@ -117,7 +120,7 @@ footer {
 }
 .city-page img,
 .welcome-home-page img {
-  max-width: 40vw;
+  min-width: 40vw;
   max-height: 80vh;
 }
 .city-text {
@@ -166,4 +169,7 @@ footer {
 }
 .current-time {
   font-size: 5vw;
+}
+.city {
+  text-transform: capitalize;
 }
