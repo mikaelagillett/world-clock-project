@@ -98,7 +98,7 @@ function displayCity() {
   cityContent.innerHTML = `
           <div class="city-text">
             <header>
-              <h1>Welcome to <span>${selectedLocation} <span> <span class="fi fi-fr"></span></h1>
+              <h1>Welcome to <span>${selectedLocation} <span> <span class="fi fi-${selectedFlag}"></span></h1>
               <h2>arrival date: ${selectedTime
                 .tz(selectedTimezone)
                 .format("MMMM Do, YYYY")}</h2>
@@ -134,6 +134,15 @@ function changeLocation(data) {
   if (selectedImage === "new york") {
     selectedImage = "new-york";
   }
+  if (selectedLocation === "Paris") {
+    selectedFlag = "fr";
+  } else if (selectedLocation === "Toronto") {
+    selectedFlag = "ca";
+  } else if (selectedLocation === "London") {
+    selectedFlag = "gb";
+  } else if (selectedLocation === "New York") {
+    selectedFlag = "us";
+  }
 }
 function changeDate(data) {
   selectedDate = data.target.value;
@@ -145,6 +154,7 @@ let selectedLocation = "";
 let selectedImage = "";
 let selectedDate = "";
 let selectedTime = "";
+let selectedFlag = "";
 let homepage = document.querySelector("#home");
 let homeTimes = document.querySelector("#home-times");
 let homeTicketPurchase = document.querySelector("#home-purchase");
